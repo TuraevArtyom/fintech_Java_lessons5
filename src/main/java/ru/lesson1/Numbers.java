@@ -1,5 +1,7 @@
 package ru.lesson1;
 
+import java.math.BigInteger;
+
 public class Numbers {
     public static double sqrt(double number) {
         double t;
@@ -18,11 +20,23 @@ public class Numbers {
         double cos = Math.cos(number);
         return cos;
     }
+    public static BigInteger factorial(int n ) {
+        if ( n < 0 ) throw new IllegalArgumentException( "n mustn't be negative.") ;
+        BigInteger result = BigInteger.ONE;
+        for ( int i = 2 ; i <= n ; i++ ) {
+            result = result.multiply(BigInteger.valueOf(i));
+        }
+        return result ;
+    }
+
     public static void main(String[] arg) {
         Numbers numbers = new Numbers();
         double square_result = numbers.square(4);
         double sqrt_result = numbers.sqrt(64);
         double cos_result = numbers.cos(0);
         System.out.println("Calculate..." + square_result + " " + sqrt_result + ' ' + cos_result);
+        System.out.println(factorial(13));
     }
 }
+
+
