@@ -28,6 +28,8 @@ public class Numbers {
         }
         return result ;
     }
+    public static long another_factorial( long n ){
+        return (n == 0) ? 1 : n * another_factorial (n - 1);}
 
     public static void main(String[] arg) {
         Numbers numbers = new Numbers();
@@ -36,6 +38,7 @@ public class Numbers {
         double cos_result = numbers.cos(0);
         System.out.println("Calculate..." + square_result + " " + sqrt_result + ' ' + cos_result);
         System.out.println(factorial(13));
+        System.out.println(another_factorial(13));
     }
 }
 
