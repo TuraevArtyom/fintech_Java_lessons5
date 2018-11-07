@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class NumbersTest {
 
     @Test
-    public void sqrt(){
+    public void sqrtTest(){
         Numbers numbers = new Numbers();
         double actual = numbers.sqrt(64);
         double expected = 8.0;
@@ -17,7 +17,7 @@ public class NumbersTest {
     }
 
     @Test
-    public void square(){
+    public void squareTest(){
         Numbers numbers = new Numbers();
         double actual = numbers.square(4);
         double expected = 16.0;
@@ -25,7 +25,7 @@ public class NumbersTest {
     }
 
     @Test
-    public void cos(){
+    public void cosTest(){
         Numbers numbers = new Numbers();
         double actual = numbers.cos(0);
         double expected = 1.0;
@@ -33,18 +33,18 @@ public class NumbersTest {
     }
 
     @Test
-    public void calculateFirstFactorial(){
+    public void calculateFirstFactorialTest(){
         Numbers numbers = new Numbers();
-        BigInteger actual = numbers.factorial(12);
+        BigInteger actual = numbers.calculateFirstFactorial(12);
         BigInteger expected = BigInteger.valueOf(479001600);//преобразовываем,
         // т.к. ждет значение типа int в expected по умолчанию
         assertEquals("Wrong value first factorial!",expected, actual);
     }
 
     @Test
-    public void calculateSecondFactorial(){
+    public void calculateSecondFactorialTest(){
         Numbers numbers = new Numbers();
-        long actual = numbers.another_factorial(12);
+        long actual = numbers.calculateSecondFactorial(12);
         long expected = 479001600;
         assertEquals("Wrong value second factorial!",expected, actual);
     }

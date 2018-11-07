@@ -20,7 +20,7 @@ public class Numbers {
         double cos = Math.cos(number);
         return cos;
     }
-    public static BigInteger factorial(int n ){
+    public static BigInteger calculateFirstFactorial(int n ){
         if ( n < 0 ) throw new IllegalArgumentException( "n mustn't be negative.") ;
         BigInteger result = BigInteger.ONE;
         for ( int i = 2 ; i <= n ; i++ ) {
@@ -28,8 +28,8 @@ public class Numbers {
         }
         return result ;
     }
-    public static long another_factorial( long n ){
-        return (n == 0) ? 1 : n * another_factorial (n - 1);}
+    public static long calculateSecondFactorial( long n ){
+        return (n == 0) ? 1 : n * calculateSecondFactorial (n - 1);}
 
     public static void main(String[] arg){
         Numbers numbers = new Numbers();
@@ -37,8 +37,8 @@ public class Numbers {
         double sqrt_result = numbers.sqrt(64);
         double cos_result = numbers.cos(0);
         System.out.println("Calculate..." + square_result + " " + sqrt_result + ' ' + cos_result);
-        System.out.println(factorial(13));
-        System.out.println(another_factorial(13));
+        System.out.println(calculateFirstFactorial(13));
+        System.out.println(calculateSecondFactorial(13));
     }
 }
 
