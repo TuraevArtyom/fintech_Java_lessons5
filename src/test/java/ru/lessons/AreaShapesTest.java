@@ -1,12 +1,18 @@
 package ru.lessons;
-import org.junit.runners.Parameterized;
+
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
+
 class AreaShapesTest {
 
+    @Tag("polygon")
     @Test
     void areaTriangleTest(){
         AreaShapes areaShapes = new AreaShapes();
@@ -16,7 +22,9 @@ class AreaShapesTest {
         assertEquals(expected, actual, "Wrong value sides!");
     }
 
-    @Test
+    @Tag("polygon")
+    @ParameterizedTest
+    @ValueSource(doubles = { 4, 166 })
     void areaSquareTest(){
         AreaShapes areaShapes = new AreaShapes();
         double actual = areaShapes.areaSquare(4);
@@ -25,7 +33,9 @@ class AreaShapesTest {
         assertEquals(expected, actual, "Wrong value side!");
     }
 
-    @Test
+    @Tag("ellipse")
+    @ParameterizedTest
+    @CsvSource({ "12,3,4", "12,2,6" })
     void areaCircleTest(){
         AreaShapes areaShapes = new AreaShapes();
         double actual = areaShapes.areaCircle(1);
