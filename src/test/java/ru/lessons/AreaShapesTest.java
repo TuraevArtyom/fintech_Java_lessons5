@@ -1,5 +1,7 @@
 package ru.lessons;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.api.Test;
@@ -12,6 +14,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class AreaShapesTest {
 
+
+    @BeforeEach
+    public void beginTest(){
+        System.out.println("Testing begins");
+    }
     @Tag("polygon")
     @Test
     void areaTriangleTest(){
@@ -24,23 +31,30 @@ class AreaShapesTest {
 
     @Tag("polygon")
     @ParameterizedTest
-    @ValueSource(doubles = { 4, 166 })
-    void areaSquareTest(){
+    @ValueSource(doubles = { 0, 3.99999, 4.00001 })
+    void areaSquareTest(double side){
         AreaShapes areaShapes = new AreaShapes();
-        double actual = areaShapes.areaSquare(4);
+        double dangerousValue = areaShapes.areaSquare(side);
+        double actual1 = areaShapes.areaSquare(4);
         double expected = 16.0;
         assertThat(areaShapes, is(notNullValue()));
-        assertEquals(expected, actual, "Wrong value side!");
+        assertNotEquals(expected, dangerousValue, "Right value side!");
+        assertEquals(expected, actual1, "Wrong value side!");
     }
 
     @Tag("ellipse")
     @ParameterizedTest
-    @CsvSource({ "12,3,4", "12,2,6" })
+    @CsvSource({ "12", "1" })
     void areaCircleTest(){
         AreaShapes areaShapes = new AreaShapes();
         double actual = areaShapes.areaCircle(1);
         double expected = Math.PI;
         assertThat(areaShapes, is(notNullValue()));
+        assertTrue(actual > 0,"Radius must be more than 0!");
         assertEquals(expected, actual, "Wrong value radius!");
+    }
+    @AfterEach
+    public void endTest(){
+        System.out.println("Testing completed");
     }
 }
