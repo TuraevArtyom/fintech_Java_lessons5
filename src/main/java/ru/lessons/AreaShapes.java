@@ -8,12 +8,10 @@ public class AreaShapes {
     }
 
     public static double areaSquare(double side){
-
         return side*side;
     }
 
     public static double areaCircle(double radius){
-
         return Math.PI * (radius * radius);
     }
     public static void main(String[] arg){

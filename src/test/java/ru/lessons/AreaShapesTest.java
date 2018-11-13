@@ -12,7 +12,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class AreaShapesTest {
 
-
     @Tag("polygon")
     @Test
     void areaTriangleTest(){
