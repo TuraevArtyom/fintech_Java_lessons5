@@ -1,7 +1,5 @@
 package ru.lessons;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.api.Test;
@@ -15,10 +13,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 class AreaShapesTest {
 
 
-    @BeforeEach
-    public void beginTest(){
-        System.out.println("Testing begins");
-    }
     @Tag("polygon")
     @Test
     void areaTriangleTest(){
@@ -52,9 +46,5 @@ class AreaShapesTest {
         assertThat(areaShapes, is(notNullValue()));
         assertTrue(actual > 0,"Radius must be more than 0!");
         assertEquals(expected, actual, "Wrong value radius!");
-    }
-    @AfterEach
-    public void endTest(){
-        System.out.println("Testing completed");
     }
 }
