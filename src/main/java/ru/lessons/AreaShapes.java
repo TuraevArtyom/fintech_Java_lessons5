@@ -19,4 +19,3 @@ public class AreaShapes {
         System.out.println(areaCircle(1));
     }
 }
-
