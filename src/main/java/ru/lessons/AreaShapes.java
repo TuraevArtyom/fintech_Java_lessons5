@@ -14,7 +14,4 @@ public class AreaShapes {
     public static double areaCircle(double radius){
         return Math.PI * (radius * radius);
     }
-    public static void main(String[] arg){
-        System.out.println(areaCircle(1));
-    }
 }
