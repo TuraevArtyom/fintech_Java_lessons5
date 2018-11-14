@@ -1,4 +1,4 @@
-package ru.lesson1;
+package ru.lessons;
 
 import java.math.BigInteger;
 
