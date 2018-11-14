@@ -15,7 +15,6 @@ public class AreaShapes {
         return Math.PI * (radius * radius);
     }
     public static void main(String[] arg){
-        AreaShapes areaShapes = new AreaShapes();
         System.out.println(areaCircle(1));
     }
 }
