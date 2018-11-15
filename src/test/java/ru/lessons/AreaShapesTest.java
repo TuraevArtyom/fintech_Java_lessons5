@@ -46,7 +46,7 @@ class AreaShapesTest {
     @Tag("ellipse")
     @ParameterizedTest(name = "Check value")
     @DisplayName("Check area function for circle")
-    @CsvSource({ "1, 3.141592653589793", "3,28.274333882308138","0.5,0.7853981633974483"})
+    @CsvSource({ "1, 3.141592653589793", "3,28.274333882308138", "0.5,0.7853981633974483"})
     void areaCircleTest(double radius, double expected){
         double actual = AreaShapes.areaCircle(radius);
         assertThat(actual, is(notNullValue()));
