@@ -24,7 +24,7 @@ class AreaShapesTest {
                 Arguments.of(5.0,12.0,13.0,30.0));
     }
     @Tag("polygon")
-    @ParameterizedTest(name = "Check value")
+    @ParameterizedTest(name = "Check value ''sideAB'' = ''sideBC'' = ''sideAC'' = ''expected''")
     @DisplayName("Check area function for triangle")
     @MethodSource("sidesTriangleAndAreaExpectedValue")
     void areaTriangleTest(double sideAB, double sideBC, double sideCA,double expected){
@@ -44,7 +44,7 @@ class AreaShapesTest {
     }
 
     @Tag("ellipse")
-    @ParameterizedTest(name = "Check value")
+    @ParameterizedTest(name = "Check value ''radius'' = ''expected''")
     @DisplayName("Check area function for circle")
     @CsvSource({ "1, 3.141592653589793", "3,28.274333882308138", "0.5,0.7853981633974483"})
     void areaCircleTest(double radius, double expected){
