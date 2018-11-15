@@ -49,9 +49,8 @@ class AreaShapesTest {
     @CsvSource({ "1, 3.141592653589793", "3,28.274333882308138","0.5,0.7853981633974483"})
     void areaCircleTest(double radius, double expected){
         double actual = AreaShapes.areaCircle(radius);
-        double actualForDifferentRadius = AreaShapes.areaCircle(radius);
         assertThat(actual, is(notNullValue()));
-        assertTrue(actualForDifferentRadius > 0,"Radius must be more than 0!");
+        assertTrue(actual > 0,"Radius must be more than 0!");
         assertEquals(expected, actual, "Wrong value radius!");
     }
 
