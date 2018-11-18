@@ -6,7 +6,7 @@ import io.restassured.filter.log.*;
 import io.restassured.http.ContentType;
 import io.restassured.specification.*;
 
-import static ru.EndPoints.*;
+import static ru.lessons.EndPoints.*;
 
 public abstract class RequestModel {
 
@@ -19,8 +19,8 @@ public abstract class RequestModel {
                 .setBasePath(BASE_PATH)
                 .setAuth(authScheme)
                     // .addHeader("Authorization", "Basic ZmludGVjaDoxcTJ3M2Uh") //for token auth demonstrate
-                //.addFilter(new RequestLoggingFilter())
-               // .addFilter(new ResponseLoggingFilter())
+                .addFilter(new RequestLoggingFilter())
+                .addFilter(new ResponseLoggingFilter())
                     //.addFilter(new ErrorLoggingFilter())  //for error demonstrate
                 .build();
     }
