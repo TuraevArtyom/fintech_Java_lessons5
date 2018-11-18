@@ -1,4 +1,4 @@
-package ru.lessons.request.;
+package ru.lessons.request;
 
 import io.restassured.authentication.*;
 import io.restassured.builder.*;
