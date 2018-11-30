@@ -18,10 +18,8 @@ public abstract class RequestModel {
                 .setBaseUri(BASE_URI)
                 .setBasePath(BASE_PATH)
                 .setAuth(authScheme)
-                    // .addHeader("Authorization", "Basic ZmludGVjaDoxcTJ3M2Uh") //for token auth demonstrate
                 .addFilter(new RequestLoggingFilter())
                 .addFilter(new ResponseLoggingFilter())
-                    //.addFilter(new ErrorLoggingFilter())  //for error demonstrate
                 .build();
     }
 
