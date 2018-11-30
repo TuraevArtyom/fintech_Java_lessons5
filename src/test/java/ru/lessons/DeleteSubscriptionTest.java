@@ -2,20 +2,29 @@ package ru.lessons;
 
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import ru.lessons.request.RequestModel;
-
+import static ru.lessons.request.SubscriptionRequest.deleteSubscriptionRequest;
 import java.util.List;
 import java.util.stream.Stream;
-
+import io.qameta.allure.*;
 import static io.restassured.RestAssured.given;
 
+@Epic("Изучение Allure")
+@Feature("Подписки Tinkoff инвестиций")
+@Story("Прогон тестов")
+@DisplayName("Тесты методом Delete подписок ")
 public class DeleteSubscriptionTest {
 
     @ParameterizedTest
     @MethodSource("getIdSubscription")
+    @Epic("Тесты подписки")
+    @Feature("Тесты DELETE запросов")
+    @Story("Удаление подписок пользователя")
+    @DisplayName("Тесты для удаления подписок пользователя по siebel_id и subscription_id")
     public void deleteSubscriptionTest(String subscriptionId){
         given().spec(RequestModel.getRequestSpecification())
                 .pathParam("siebel_id", "a.turaev")
