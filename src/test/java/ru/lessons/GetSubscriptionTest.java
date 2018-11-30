@@ -35,6 +35,8 @@ public class GetSubscriptionTest {
                 .statusCode(200);
     }
     @Test
+    @DisplayName("Get all subscriptions no parameters")
+    @Description("Получение ошибки при передаче запроса о подписках без параметров")
     public void getNoParamsSubscriptionsTest(){
         given().spec(RequestModel.getRequestSpecification())
                 .filter(new RequestLoggingFilter())

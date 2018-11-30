@@ -6,6 +6,7 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import ru.lessons.request.RequestModel;
 import ru.lessons.entity.SubscriptionInfo;
 import static ru.lessons.request.SubscriptionRequest.deleteSubscriptionRequest;
@@ -22,7 +23,7 @@ public class CreateSubscriptionTest {
     public void CleanUp(){
         DeleteSubscriptionTest.deleteAllSubscriptions();
     }
-    @Test
+    @ParameterizedTest
     @Link("https://fintech-trading-qa.tinkoff.ru/v1/md/docs/#/Subscriptions/md-contacts-subscription-create")
     @Issue("TSГ-2")
     @TmsLink("123456790")
@@ -48,7 +49,7 @@ public class CreateSubscriptionTest {
     }
 
 
-    @Test
+    @ParameterizedTest
     @DisplayName("Создание несуществующей подписки по siebel_id клиента")
     @Description("Получение ошибки при попытке создания подписки")
     public void postCreateFailSubscription(){
